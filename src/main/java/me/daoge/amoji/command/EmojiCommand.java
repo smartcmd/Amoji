@@ -5,6 +5,7 @@ import org.allaymc.api.command.Command;
 import org.allaymc.api.command.SenderType;
 import org.allaymc.api.command.tree.CommandTree;
 import org.allaymc.api.form.Forms;
+import org.allaymc.api.permission.OpPermissionCalculator;
 import org.allaymc.api.utils.TextFormat;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class EmojiCommand extends Command {
     public EmojiCommand() {
         super("emoji", "Send emoji!", "amoji.command.emoji");
         this.aliases.addAll(List.of("emj", "ej"));
+        OpPermissionCalculator.NON_OP_PERMISSIONS.addAll(this.permissions);
     }
 
     @Override
