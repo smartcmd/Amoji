@@ -1,56 +1,114 @@
-# Allay Java Plugin Template
+# 😊 Amoji
 
-Welcome to the java plugin template for allay.
+An emoji plugin for [AllayMC](https://github.com/AllayMC/Allay) server that displays emoji particle effects above players' heads!
 
-## Prerequisites
+![img.png](img.png)
 
-- Java21 or higher.
-- Allay installed.
+## ✨ Features
 
-## Getting Started
+- 🎭 Display emoji particle effects above players' heads
+- 💬 Auto-detect emoji phrases in chat messages
+- 📝 Customizable emoji names and trigger phrases
+- 🎮 Simple GUI for selecting emojis
 
-1. **Clone this Repository**
+## 📦 Installation
 
-```bash
-git clone https://github.com/AllayMC/JavaPluginTemplate.git
-```
-   
-2. **Navigate to the Cloned Directory**
+1. Download the latest release from [Releases](https://github.com/smartcmd/Amoji/releases)
+2. Place the JAR file into your server's `plugins` folder
+3Restart the server
 
-```bash
-cd JavaPluginTemplate
-```
-   
-3. **Change Plugin Information**
+## 📋 Commands
 
-- Rename package name from `org.allaymc.javaplugintemplate` to `your.group.name.and.pluginname`
-- Update [build.gradle.kts](build.gradle.kts) and [settings.gradle.kts](settings.gradle.kts)
-- Reload gradle
-   
-4. **Build and Run Your Plugin**
+| Command  | Aliases       | Description                   | Permission            |
+|----------|---------------|-------------------------------|-----------------------|
+| `/emoji` | `/emj`, `/ej` | Opens the emoji selection GUI | `amoji.command.emoji` |
 
-```bash
-gradlew shadowJar
-```
-   
-This command will produce a `.jar` file in the `build/libs` directory. 
-Copy the `.jar` file to the `plugins` directory of your allay server.
-Start the allay server and check the logs to ensure your plugin loads and operates
-as expected.
+## ⚙️ Configuration
 
-5. **Test Your Plugin in Gradle**
+### config.yml
 
-```bash
-gradlew runServer
+```yaml
+# Enable/disable automatic emoji display when players chat
+auto-emoji: true
 ```
 
-This command will start an allay server with your plugin loaded.
-Then close allay server by clicking `X` in the dashboard window.
+### emoji.yml
 
-## Documentation
+Defines the display names for each emoji:
 
-For a deeper dive into the Allay API and its functionalities, please refer to our [documentation](https://docs.allaymc.org) (WIP).
+```yaml
+smiley: Smiley
+grimacing: Grimacing
+grin: Grin
+joy: Joy
+smile: Smile
+# ... and more
+```
 
-## License
+### emoji-phrases.yml
+
+Defines trigger phrases that will automatically display emojis above players when they chat:
+
+```yaml
+joy:
+  - "haha"
+  - "hhhh"
+  - "lmao"
+  - "lmfao"
+smile:
+  - "welcome"
+  - "wlc"
+heart_eyes:
+  - "love"
+  - "<3"
+# ... and more
+```
+
+## 🎨 Available Emojis
+
+| Emoji | ID                           | Description                  |
+|-------|------------------------------|------------------------------|
+| 😊    | smiley                       | Smiley                       |
+| 😬    | grimacing                    | Grimacing                    |
+| 😀    | grin                         | Grin                         |
+| 😂    | joy                          | Joy                          |
+| 😄    | smile                        | Smile                        |
+| 😅    | sweat_smile                  | Sweat smile                  |
+| 😆    | laughing                     | Laughing                     |
+| 😇    | innocent                     | Innocent                     |
+| 😉    | wink                         | Wink                         |
+| 😊    | blush                        | Blush                        |
+| 🙂    | slight_smile                 | Slight smile                 |
+| 🙃    | upside_down                  | Upside down                  |
+| ☺️    | relaxed                      | Relaxed                      |
+| 😋    | yum                          | Yum                          |
+| 😌    | relieved                     | Relieved                     |
+| 😍    | heart_eyes                   | Heart eyes                   |
+| 😘    | kissing_heart                | Kissing heart                |
+| 😗    | kissing                      | Kissing                      |
+| 😙    | kissing_smiling_eyes         | Kissing smiling eyes         |
+| 😚    | kissing_closed_eyes          | Kissing closed eyes          |
+| 😜    | stuck_out_tongue_winking_eye | Stuck out tongue winking eye |
+| 😝    | stuck_out_tongue_closed_eyes | Stuck out tongue closed eyes |
+| 😛    | stuck_out_tongue             | Stuck out tongue             |
+| 🤑    | money_mouth                  | Money mouth                  |
+| 😎    | sunglasses                   | Sunglasses                   |
+| 😏    | smirk                        | Smirk                        |
+| 😶    | no_mouth                     | No mouth                     |
+| 😐    | neutral_face                 | Neutral face                 |
+| 😑    | expressionless               | Expressionless               |
+| 😒    | unamused                     | Unamused                     |
+| 🙄    | rolling_eyes                 | Rolling eyes                 |
+| 😳    | flushed                      | Flushed                      |
+| 😞    | disappointed                 | Disappointed                 |
+| 😟    | worried                      | Worried                      |
+| 😠    | angry                        | Angry                        |
+| 😡    | rage                         | Rage                         |
+| 😔    | pensive                      | Pensive                      |
+| 😕    | confused                     | Confused                     |
+| 🙁    | slight_frown                 | Slight frown                 |
+| ☹️    | frowning2                    | Frowning 2                   |
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
